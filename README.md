@@ -347,7 +347,8 @@ public class SheetLayout extends FrameLayout {
 }
 ```
 ## bottom_sheet_layout.xml
-```XML  <?xml version="1.0" encoding="utf-8"?>
+```XML 
+<?xml version="1.0" encoding="utf-8"?>
 <io.codetail.widget.RevealLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -363,5 +364,53 @@ public class SheetLayout extends FrameLayout {
             android:visibility="invisible"/>
 
 </io.codetail.widget.RevealLinearLayout>
- ```
+```
+# trong anim
+# activity_close_translate_to_bottom.xml
+```XML 
+<?xml version="1.0" encoding="utf-8"?>
+
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <translate android:fromYDelta="0%"
+        android:toYDelta="100%"
+        android:duration="200"
+        android:interpolator="@android:anim/decelerate_interpolator" />
+
+</set>
+
+```
+##activity_no_animation.xml
+
+```XML 
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true" >
+
+    <translate android:fromYDelta="0%"
+        android:toYDelta="0%"
+        android:duration="200"
+        android:interpolator="@android:anim/decelerate_interpolator" />
+
+</set>
+
+
+```
+##activity_open_translate_from_bottom.xml
+
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <translate android:fromYDelta="100%"
+        android:toYDelta="0%"
+        android:duration="150"
+        android:interpolator="@android:anim/decelerate_interpolator" />
+
+</set>
+```
+
+
 
