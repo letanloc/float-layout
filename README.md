@@ -411,6 +411,65 @@ public class SheetLayout extends FrameLayout {
 
 </set>
 ```
+#value
+##attrs.xml
+```XmL 
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FooterLayout">
+        <attr name="ft_color" format="color"/>
+        <attr name="ft_anim_duration" format="integer"/>
+        <attr name="ft_container_gravity" format="enum">
+            <enum name="start" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="end" value="2"/>
+        </attr>
+        <attr name="ft_fab_type" format="enum">
+            <enum name="mini" value="40"/>
+            <enum name="normal" value="56"/>
+        </attr>
+    </declare-styleable>
+</resources>
+```
+##dimen.xml
+```XML
+ <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="elevation">4dp</dimen>
+```
+```XML
 
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
+    <style name="ToolBarStyle" parent="">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark</item>
+    </style>
 
+    <style name="ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>
+```
+##compile
+```xml 
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+  compile('com.github.ozodrukh:CircularReveal:1.1.1@aar') {
+        transitive = true;
+    }
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.android.support:design:23.1.1'
+```
+###----------------------------------------------------------------------------------------------------------
