@@ -438,6 +438,7 @@ public class SheetLayout extends FrameLayout {
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="elevation">4dp</dimen>
 ```
+## style.xml
 ```XML
 
     <!-- Base application theme. -->
@@ -472,4 +473,77 @@ repositories {
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.android.support:design:23.1.1'
 ```
-###----------------------------------------------------------------------------------------------------------
+####----------------------------------------------------------------------------------------------------------
+##layout
+### main.xml
+```XML
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar_actionbar"
+        style="@style/ToolBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="2dp"
+        android:minHeight="56dp"
+        android:paddingLeft="36dp"
+        app:titleTextAppearance="@style/ToolbarTitle" />
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:rippleColor="@color/colorPrimary" />
+
+    <com.loc.floatlayout.SheetLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:elevation="2dp"
+        app:ft_color="@color/colorPrimary"
+        app:ft_container_gravity="center" />
+
+</RelativeLayout>
+
+
+```
+## main2.xml
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.loc.floatlayout.Main2Activity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_actionbar"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/ToolBarStyle"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:titleTextAppearance="@style/ToolbarTitle"
+        android:minHeight="56dp"
+        android:elevation="2dp" />
+</RelativeLayout>
+
+```
+
+
+
+
